@@ -19,9 +19,8 @@
 		"express-session": "^1.17.2",
 		"mongoose": "^5.12.15",
 		"mongoose-type-url": "^2.1.0",
+		"nodemon": "^2.0.8",
 		"short-unique-id": "^4.3.3"
 	},
-	"devDependencies": {
-		"nodemon": "^2.0.8"
-	}
+	"devDependencies": {}
 }
