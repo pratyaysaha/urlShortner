@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="/header.css" />
+<div class="header-container">
+	<div class="left">
+		<div class="logo" onclick="location.assign(`${window.location.origin}`)">
+			<i class="fas fa-anchor"></i>
+		</div>
+		<div
+			class="logo-title"
+			onclick="location.assign(`${window.location.origin}`)"
+		>
+			SmallMe
+		</div>
+	</div>
+	<div class="right">
+		<%if(isShow){%>
+		<div
+			class="header-button login"
+			onclick="location.assign(`${window.location.origin}/login`)"
+		>
+			Log In
+		</div>
+		<div
+			class="header-button signup"
+			onclick="location.assign(`${window.location.origin}/signup`)"
+		>
+			Sign Up
+		</div>
+		<%}%>
+	</div>
+</div>

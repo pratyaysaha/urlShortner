@@ -1,0 +1,27 @@
+{
+	"name": "url-shortner",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "nodemon app.js",
+		"production": "node app.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcrypt": "^5.0.1",
+		"connect-mongo": "^4.4.1",
+		"dotenv": "^10.0.0",
+		"ejs": "^3.1.6",
+		"express": "^4.17.1",
+		"express-session": "^1.17.2",
+		"mongoose": "^5.12.15",
+		"mongoose-type-url": "^2.1.0",
+		"short-unique-id": "^4.3.3"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.7"
+	}
+}

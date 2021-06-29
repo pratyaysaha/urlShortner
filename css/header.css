@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+.header-container {
+	height: 80px;
+	font-family: "Montserrat", sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 25px;
+	color: #fff;
+}
+.left {
+	display: flex;
+	font-weight: 600;
+}
+.left > div:hover {
+	cursor: pointer;
+}
+.left > div {
+	margin-left: 30px;
+}
+.logo {
+	color: #f58a07;
+}
+.right {
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+	margin-right: 40px;
+}
+.right > div {
+	margin-left: 20px;
+	user-select: none;
+}
+.signup {
+	background-color: royalblue;
+	padding: 15px 10px 15px 10px;
+	border-radius: 10px;
+}
+.login:hover {
+	color: rgb(85, 115, 206);
+	user-select: none;
+}
+.signup:hover {
+	background-color: rgb(35, 77, 204);
+	user-select: none;
+}
+.header-button:hover {
+	cursor: pointer;
+}
+@media screen and (max-width: 754px) {
+	.logo-title {
+		display: none;
+	}
+	.right {
+		margin-right: 20px;
+	}
+}
