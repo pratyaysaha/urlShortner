@@ -1,7 +1,7 @@
 var eyestatus = true
 var emailValid = false
 window.onload = () => {
-	document.querySelector(".input.name").focus()
+	document.querySelector(".input.email").focus()
 }
 const eyechange = (me) => {
 	if (eyestatus) {
@@ -51,7 +51,6 @@ const submit = () => {
 	}
 	const data = {
 		email: document.querySelector(".input.email").value,
-		name: document.querySelector(".input.name").value,
 		password: document.querySelector(".input.password").value,
 	}
 	for (item in data) {
@@ -59,7 +58,7 @@ const submit = () => {
 			errorMessage(`Provide a valid ${item}`)
 		}
 	}
-	const url = `${window.location.origin}/api/user/new`
+	const url = `${window.location.origin}/api/user/login`
 	fetch(url, {
 		method: "POST",
 		headers: { "Content-Type": "application/json;charset=utf-8" },
@@ -68,7 +67,7 @@ const submit = () => {
 		.then((res) => res.json())
 		.then((back) => {
 			if (back.status) {
-				location.assign(`${window.location.origin}/`)
+				location.assign(`${window.location.origin}/index`)
 			} else {
 				errorMessage(`${back.error}`)
 			}

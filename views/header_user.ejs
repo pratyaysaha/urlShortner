@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/header.css" />
+<div class="header-container">
+	<div class="left">
+		<div
+			class="logo"
+			onclick="location.assign(`${window.location.origin}/index`)"
+		>
+			<i class="fas fa-anchor"></i>
+		</div>
+		<div
+			class="logo-title"
+			onclick="location.assign(`${window.location.origin}/index`)"
+		>
+			SmallMe
+		</div>
+	</div>
+	<div class="right">
+		<div class="header-button name"><%=name%></div>
+		<div class="header-button logout" onclick="logout()">
+			<i class="fas fa-sign-out-alt"></i>
+		</div>
+	</div>
+</div>
+<script>
+	const logout = () => {
+		const url = `${window.location.origin}/api/user/logout`
+		fetch(url)
+			.then((res) => res.json())
+			.then((back) => {
+				if (back.status) {
+					location.assign(`${window.location.origin}/login`)
+				}
+			})
+	}
+</script>

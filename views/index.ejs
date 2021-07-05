@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/index.css" />
+		<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+		<script
+			src="https://kit.fontawesome.com/11d589870a.js"
+			crossorigin="anonymous"
+		></script>
+		<title>SmallMe</title>
+	</head>
+	<body>
+		<%-include('../views/header_user',{name : userDetails.name})%>
+		<div class="content-container">
+			<div class="link-input">
+				<div class="content-small">Enter your link</div>
+				<input class="input userid" value="<%=userDetails._id%>" hidden />
+				<div class="input-field">
+					<i class="fas fa-at"></i>
+					<input
+						class="input link"
+						type="url"
+						placeholder="Enter your Link"
+						oninput="checkURL(this.value)"
+					/>
+				</div>
+				<div class="input-field">
+					<i class="fas fa-anchor"></i>
+					<input
+						class="input shortname"
+						type="text"
+						placeholder="Link Name eg: https://smll.in/@linkname"
+						oninput="checkName(this)"
+					/>
+				</div>
+				<div class="message">
+					<li>If link name left empty, auto-assign of link name</li>
+					<li>Link name should not contain characters [? / space " ']</li>
+				</div>
+				<div class="error-message"></div>
+				<div class="button-wrapper">
+					<div class="button" onclick="shortenMe()">
+						<div class="button-content">Shorten</div>
+					</div>
+				</div>
+			</div>
+			<div class="links"></div>
+		</div>
+
+		<div class="footer">
+			Made with <span style="color: red">❤</span> by SmallMe
+		</div>
+	</body>
+	<script src="/index.js"></script>
+</html>

@@ -37,6 +37,20 @@ app.use(
 		},
 	})
 )
+const loginMiddleWare = (req, res, next) => {
+	if (!req.session.islogged) {
+		res.redirect("/")
+	} else {
+		next()
+	}
+}
+const ifloggedInMW = (req, res, next) => {
+	if (req.session.islogged) {
+		res.redirect("/index")
+	} else {
+		next()
+	}
+}
 app.use("/api", apiRoute)
 app.get("/@:shortname", async (req, res) => {
 	try {
@@ -49,7 +63,7 @@ app.get("/@:shortname", async (req, res) => {
 		res.send("<h1>error</error>")
 	}
 })
-app.get("/", (req, res) => {
+app.get("/", ifloggedInMW, (req, res) => {
 	res.render("homepage")
 })
 app.get("/login", (req, res) => {
@@ -57,6 +71,9 @@ app.get("/login", (req, res) => {
 })
 app.get("/signup", (req, res) => {
 	res.render("signup")
+})
+app.get("/index", loginMiddleWare, (req, res) => {
+	res.render("index", { userDetails: req.session.userDetails })
 })
 
 mongoose.connect(process.env.DB_CONNECTION, {

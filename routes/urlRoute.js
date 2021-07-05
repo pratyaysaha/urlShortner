@@ -1,5 +1,6 @@
 const express = require("express")
 const urlModel = require("../model/url")
+const userModel = require("../model/user")
 const ShortUniqueId = require("short-unique-id")
 
 const router = express.Router()
@@ -21,7 +22,7 @@ router.post("/new", async (req, res) => {
 			if (checkShortName !== null) {
 				return res.json({
 					status: false,
-					error: "shortName exists",
+					error: "Link name exists",
 					errorOccured: "shortName",
 					code: 101,
 				})
@@ -58,6 +59,39 @@ router.post("/new", async (req, res) => {
 			errorOccured: errorOccured,
 			errorDetails: err,
 			code: 100,
+		})
+	}
+})
+router.get("/all/:userid", async (req, res) => {
+	try {
+		const findUser = await userModel.findById(req.params.userid)
+		if (findUser === null) {
+			return res.json({
+				status: false,
+				error: "No user found",
+				errorMessage: "user",
+			})
+		}
+	} catch (err) {
+		return res.json({
+			status: false,
+			erorr: err.message,
+			errorOccured: errorOccured,
+			errorDetails: err,
+		})
+	}
+	try {
+		const getUrls = await urlModel.find({ userId: req.params.userid })
+		return res.json({
+			status: true,
+			data: getUrls,
+		})
+	} catch (err) {
+		return res.json({
+			status: false,
+			erorr: err.message,
+			errorOccured: errorOccured,
+			errorDetails: err,
 		})
 	}
 })

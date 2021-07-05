@@ -112,6 +112,11 @@ body {
 .create-account:hover {
 	cursor: pointer;
 }
+.error-message {
+	color: red;
+	display: none;
+	margin-top: 20px;
+}
 @media screen and (max-width: 754px) {
 	.content-container {
 		overflow-y: scroll;
