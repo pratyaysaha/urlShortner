@@ -145,7 +145,7 @@ body {
 		width: 90%;
 	}
 }
-@media screen and (max-width: 754px) {
+@media screen and (max-width: 813px) {
 	.headers {
 		font-size: 30px;
 	}
