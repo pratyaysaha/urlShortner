@@ -96,11 +96,14 @@ body {
 	margin-top: 30px;
 	margin-bottom: 20px;
 	color: #fff;
-	width: 70%;
+	width: 80%;
 	font-family: "Nunito", sans-serif;
 	overflow-x: hidden;
 	overflow-y: auto;
 	-ms-overflow-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .links::-webkit-scrollbar {
 	display: none;
