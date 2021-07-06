@@ -140,6 +140,11 @@ body {
 		height: 100%;
 	}
 }
+@media screen and (max-width: 1228px) {
+	.links {
+		width: 90%;
+	}
+}
 @media screen and (max-width: 754px) {
 	.headers {
 		font-size: 30px;

@@ -161,7 +161,7 @@ body {
 	margin-top: 10px;
 	font-size: 1rem;
 }
-@media screen and (max-width: 754px) {
+@media screen and (max-width: 1228px) {
 	.link-input {
 		width: 90%;
 	}
