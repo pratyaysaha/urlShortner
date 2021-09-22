@@ -94,7 +94,7 @@ router.post("/login", async (req, res) => {
 		req.session.islogged = true
 		req.session.userDetails = findUser
 		console.log(req.session)
-		return res.json({ status: true, loggedSuccess: true })
+		return res.json({ status: true, loggedSuccess: true, userId: findUser._id })
 	} else {
 		return res.json({
 			status: false,
